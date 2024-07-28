@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
 export class LandingPageComponent {
 
   scroll(el: HTMLElement) {
-    el.scrollIntoView();
+    el.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
   }
 }
