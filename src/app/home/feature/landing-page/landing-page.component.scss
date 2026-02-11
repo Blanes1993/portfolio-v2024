@@ -1,3 +1,22 @@
 a {
   cursor: pointer;
 }
+.universe-bg {
+  background: radial-gradient(ellipse at bottom, #0b0b2b 0%, #000000 100%);
+  z-index: 0;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+.animate-twinkle {
+  animation: twinkle 2s infinite ease-in-out;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+}

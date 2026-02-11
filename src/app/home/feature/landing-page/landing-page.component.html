@@ -1,10 +1,10 @@
 <!-- Main Content -->
-<main id="content">
+<main id="content" class="relative">
   <!-- Header -->
   <header
-    class="sticky top-4 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full before:absolute before:inset-0 before:max-w-[85rem] before:mx-2 before:lg:mx-auto before:rounded-[26px] before:bg-white-400/30 before:backdrop-blur-md">
+    class="sticky top-0 bg-black pt-4 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full before:absolute before:inset-0 before:max-w-[85rem] before:mx-2 before:lg:mx-auto before:rounded-[26px] before:bg-white-400/30 before:backdrop-blur-md">
     <nav
-      class="relative max-w-[85rem] w-full py-2.5 ps-5 pe-5 md:flex md:items-center md:justify-between md:py-0 mx-2 lg:mx-auto border border-gray-200 rounded-[2rem]">
+      class="relative universe-bg max-w-[85rem] w-full py-2.5 ps-5 pe-5 md:flex md:items-center md:justify-between md:py-0 mx-2 lg:mx-auto border border-gray-200 rounded-[2rem]">
       <div class="flex items-center justify-between">
         <a class="flex-none focus:outline-none focus:opacity-80" (click)="scroll(landing)">
           <h1
@@ -14,7 +14,7 @@
         </a>
         <div class="md:hidden">
           <button type="button"
-            class="hs-collapse-toggle size-9 flex justify-center items-center text-sm font-semibold rounded-lg border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:border-neutral-800 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+            class="hs-collapse-toggle size-9 flex justify-center items-center text-sm font-semibold rounded-lg border border-gray-200 text-gray-300 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:border-neutral-800 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
             id="hs-navbar-page-demo-pricing-collapse" aria-expanded="false" aria-controls="hs-navbar-page-demo-pricing"
             aria-label="Toggle navigation" data-hs-collapse="#hs-navbar-page-demo-pricing">
             <svg class="hs-collapse-open:hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24"
@@ -42,27 +42,27 @@
           class="overflow-hidden overflow-y-auto max-h-[75vh] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500">
           <div
             class="flex flex-col gap-x-0 mt-5 divide-y divide-dashed divide-gray-200 md:flex-row md:items-center md:justify-end md:gap-x-7 md:mt-0 md:ps-7 md:divide-y-0 md:divide-solid dark:divide-neutral-700">
-            <a class="py-3 md:py-4 font-medium text-gray-600 hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
+            <a class="py-3 md:py-4 font-medium text-gray-200 hover:text-violet-400 focus:outline-none focus:text-violet-400 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
               (click)="scroll(landing)" aria-current="page">
               Landing
             </a>
 
-            <a class="py-3 md:py-4 font-medium text-gray-600 hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
+            <a class="py-3 md:py-4 font-medium text-gray-200 hover:text-violet-400 focus:outline-none focus:text-violet-400 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
               (click)="scroll(profile)">
               Profile
             </a>
 
-            <!-- <a
-              class="py-3 md:py-4 font-medium text-gray-600 hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500">
-              Project
-            </a> -->
+            <a class="py-3 md:py-4 font-medium text-gray-200 hover:text-violet-400 focus:outline-none focus:text-violet-400 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
+              (click)="scroll(projects)">
+              Projects
+            </a>
 
-            <a class="py-3 md:py-4 font-medium text-gray-600 hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
+            <a class="py-3 md:py-4 font-medium text-gray-200 hover:text-violet-400 focus:outline-none focus:text-violet-400 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
               (click)="scroll(work)">
               Work
             </a>
 
-            <a class="py-3 md:py-4 font-medium text-gray-600 hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
+            <a class="py-3 md:py-4 font-medium text-gray-200 hover:text-violet-400 focus:outline-none focus:text-violet-400 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
               (click)="scroll(contact)">
               Contact
             </a>
@@ -75,44 +75,64 @@
   <!-- End Header -->
 
   <!-- Landing -->
-  <div #landing>
-    <app-landing></app-landing>
-  </div>
+
   <!-- End Landing -->
+  <div class="universe-bg inset-0 overflow-hidden z-0">
+    <div *ngFor="let star of stars" class="star absolute rounded-full bg-white opacity-0 animate-twinkle" [ngStyle]="{
+         top: star.top,
+         left: star.left,
+         width: star.size,
+         height: star.size,
+         animationDelay: star.delay
+       }">
+    </div>
+    <div #landing>
+      <app-landing></app-landing>
+    </div>
+    <!-- Extra Content -->
+    <div class="overflow-hidden pt-28">
+      <app-extra-content></app-extra-content>
+    </div>
+    <!-- End Extra Content -->
 
-  <!-- Extra Content -->
-  <div>
-    <app-extra-content></app-extra-content>
+    <!-- Profile -->
+    <div class="overflow-hidden pt-28" #profile>
+      <app-profile></app-profile>
+    </div>
+    <!-- End Profile -->
+
+    <!-- Project -->
+    <div class="overflow-hidden pt-16" #projects>
+      <app-projects></app-projects>
+    </div>
+    <!-- End Project -->
+
+    <!-- Work -->
+    <!-- Icon Blocks -->
+    <div class="overflow-hidden pt-16" #work>
+      <app-work></app-work>
+    </div>
+    <!-- End Icon Blocks -->
+    <!-- End Work -->
+
+
+
+    <!-- Border Separator -->
+    <div class="bg-gradient-to-r from-transparent via-violet-400 to-transparent h-px"></div>
+    <!-- End Border Separator -->
+
+    <!-- Contact -->
+    <div class="  pb-8 pt-8" #contact>
+      <app-contact></app-contact>
+    </div>
   </div>
-  <!-- End Extra Content -->
 
-  <!-- Profile -->
-  <div class="relative overflow-hidden pt-28" #profile>
-    <app-profile></app-profile>
-  </div>
-  <!-- End Profile -->
 
-  <!-- Project -->
-  <!-- End Project -->
 
-  <!-- Work -->
-  <!-- Icon Blocks -->
-  <div class="relative overflow-hidden pt-16" #work>
-    <app-work></app-work>
-  </div>
-  <!-- End Icon Blocks -->
-  <!-- End Work -->
-
-  <!-- Border Separator -->
-  <div class="bg-gradient-to-r from-transparent via-violet-400 to-transparent h-px"></div>
-  <!-- End Border Separator -->
-
-  <!-- Contact -->
-  <div class="bg-gradient-to-r from-purple-50 to-violet-50 pb-8 pt-8" #contact>
-    <app-contact></app-contact>
-  </div>
   <!-- End Contact -->
   <!-- Footer -->
-  <app-footer></app-footer>
+
   <!-- End footer -->
 </main>
+
+<app-footer></app-footer>

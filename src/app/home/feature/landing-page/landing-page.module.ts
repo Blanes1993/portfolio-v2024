@@ -9,6 +9,7 @@ import { ProfileModule } from '../../ui/profile/profile.module';
 import { WorkModule } from '../../ui/work/work.module';
 import { ContactModule } from '../../ui/contact/contact.module';
 import { FooterModule } from '../../ui/footer/footer.module';
+import { ProjectsModule } from '../../ui/projects/projects.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { FooterModule } from '../../ui/footer/footer.module';
     ProfileModule,
     WorkModule,
     ContactModule,
-    FooterModule
+    FooterModule,
+    ProjectsModule
   ]
 })
 export class LandingPageModule { }
